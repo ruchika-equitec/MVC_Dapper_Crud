@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RuchikaMVCCrud.Models.StudModel>
+
+@{
+    ViewBag.Title = "SoftDeletedRecords";
+}
+
+<h2>SoftDeletedRecords</h2>
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fees)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fees)
+            </td>
+            <td>
+                @Html.ActionLink("Retrive", "RetriveData", new { id = item.StudentID }, new { @class = "btn btn-primary" })
+
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Back to List", "Index", new { @class = "btn btn-secondary" })

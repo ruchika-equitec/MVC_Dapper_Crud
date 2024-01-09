@@ -1,0 +1,72 @@
+﻿@model RuchikaMVCCrud.Models.StudModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @*<h4>StudModel</h4>*@
+    <hr />
+    @*<dl class="dl-vertical">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fees)
+        </dd>
+
+    </dl>*@
+    <table  class="table">
+        <thead class="table-dark">
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.StudentID)</th>
+                <th>  @Html.DisplayNameFor(model => model.Name)</th>
+                <th> @Html.DisplayNameFor(model => model.EmailID)</th>
+                <th> @Html.DisplayNameFor(model => model.Age)</th>
+                <th> @Html.DisplayNameFor(model => model.Gender)</th>
+                <th> @Html.DisplayNameFor(model => model.Fees)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row">
+                <td>  @Html.DisplayFor(model => model.StudentID)</td>
+                <td> @Html.DisplayFor(model => model.Name)</td>
+                <td>  @Html.DisplayFor(model => model.EmailID)</td>
+                <td> @Html.DisplayFor(model => model.Age)</td>
+                <td> @Html.DisplayNameFor(model => model.Gender)</td>
+                <td>   @Html.DisplayFor(model => model.Fees)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "AddEd", new {  id = Model.StudentID }) |
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-secondary" })
+</p>
